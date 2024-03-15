@@ -37,19 +37,20 @@ sidebar_position: 8
 
 ## Примеры:
 ```kts
-val tik_tocker by NPCEntity.creating{ // НИП с именем Тик-токер+
-    name = "Тик-токер+"
-    ... // Другие параметры
+val denis by NPCEntity.creating{ // НИП с именем Тик-токер+
+    name = "Денис"
+    ... Остальные параметры
 }
+var strange_number = "1.0".toFloat() // Просто, чтобы все работало, не спрашивайте меня об этом
 
-tik_tocker.addTrade{ // Создаём новые трейды с этим НИПом
+denis.addTrade{ // Создаём новые трейды с этим НИПом
     MerchantOffer( // Обращаем к классу игры "MerchantOffer.java"
-        item("oak_planks", 16), // Покупаемая вещь 1
-        item("spyglass", 4), // Покупаемая вещь 2
-        item("dirt", 2), // Продаваемая вещь
-        1, // Макс можно поторговаться только 1 раз
+        item("minecraft:oak_planks", 16), // Покупаемая вещь 1
+        item("minecraft:spyglass", 4), // Покупаемая вещь 2
+        item("minecraft:dirt", 2), // Продаваемая вещь
+        10, // Макс можно поторговаться только 1 раз
         0, // Кол-во опыта прокачки торговца
-        0f // Хз чё это
+        strange_number, // Хз чё это. И я тоже хз
     )
 }
 ```
